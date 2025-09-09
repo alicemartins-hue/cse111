@@ -1,6 +1,7 @@
 import math 
 from datetime import date
 
+#HI, I had add a opcion to know with its on time to replace the tire
 
 current_date_time = date.today()
 
