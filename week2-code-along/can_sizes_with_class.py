@@ -35,9 +35,7 @@ can10 = Steel_can("#211", 6.83, 12.38, 0.34)
 can11 = Steel_can("#300", 7.62, 11.27, 0.38)
 can12 = Steel_can("#303", 8.10, 11.11, 0.42)
 
-
 cans = [can1, can2, can3, can4, can5, can6, can7, can8, can9, can10, can11, can12]
-
 
 for can in cans:
     print(f"Name: {can.name}, Volume: {can.volume():.2f}, Area: {can.compute_surface_area():.2f}")
