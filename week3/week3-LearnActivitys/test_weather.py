@@ -13,4 +13,4 @@ def test_cels_from_fahr():
     assert cels_from_fahr(32) == approx(0)
     assert cels_from_fahr(70) == approx(21.1111)
 
-pytest.main(["-v", "---tb=line", "-rN", __file__])
+pytest.main(["-v", "--tb=line", "-rN", __file__])
