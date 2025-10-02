@@ -1,0 +1,9 @@
+
+
+#First Try
+
+first odometer reading: 1030 miles
+second odometer reading: 2010 miles
+amount of fuel used: 30 gallons
+
+miles per gallon: 32.67
