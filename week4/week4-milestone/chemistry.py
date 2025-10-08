@@ -132,7 +132,7 @@ def compute_molar_mass(formula, periodic_table_dict):
            parameter: symbol = string
            return float"""
          
-         atomic_mass = make_periodic_table[symbol][1]
+         atomic_mass = periodic_table_dict[symbol][1]
          return atomic_mass
     
     for symbol in y:
@@ -173,7 +173,7 @@ def main():
         formula_chemical = input("Enter Chemical Formula: ")
         compounds_amount = float(input("Enter the amount of compounds in grams: "))
         formula = parse_formula(formula_chemical, table)
-        molar_mass = compute_molar_mass(formula, make_periodic_table)
+        molar_mass = compute_molar_mass(formula, table)
         moles = compounds_amount / molar_mass
         print(f"{molar_mass} molar mass")
         print(f"{moles:.5f} moles")
