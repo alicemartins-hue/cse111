@@ -1,6 +1,10 @@
 from formula import parse_formula
 from chemistry_learn import learn_molar_mass
 
+#To the adtional requirement I had add a learn option
+#in the main the first thing that are asked is if the person want to learn
+#if not it goes directly to conlusion. if does we beggin a game.
+
 def make_periodic_table():
     periodic_table_dict = {
         # symbol: [name, atomic_mass]
