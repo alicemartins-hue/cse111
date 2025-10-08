@@ -103,7 +103,7 @@ def make_periodic_table():
     return periodic_table_dict
     
 
-def compute_molar_mass(formula, amount):
+def compute_molar_mass(formula, periodic_table_dict):
     """
     Calculates the molar mass and number of moles of a compound.
     Takes a formula (list of element–quantity pairs) and the sample mass.
@@ -132,7 +132,7 @@ def compute_molar_mass(formula, amount):
            parameter: symbol = string
            return float"""
          
-         atomic_mass = make_periodic_table()[symbol][1]
+         atomic_mass = make_periodic_table[symbol][1]
          return atomic_mass
     
     for symbol in y:
@@ -148,16 +148,14 @@ def compute_molar_mass(formula, amount):
          mult_list.append(multiply)
 
     molar_mass = sum(mult_list)
-    moles = amount / molar_mass
-
-    print("")
-    print(f"{molar_mass} grams/mole")
-    print(f"{moles:.5f} moles")
-    print("")
+    
+    return molar_mass
 
 
 def main():
     table = make_periodic_table()
+    print("")
+    print("Hi, I am Maya")
     print("Lets find together how to discover the molar mass of a molecule? Y/n")
     studying = input("--- ")
     if studying.upper() in ("Y","YES"):
@@ -165,17 +163,20 @@ def main():
          print("We will need a chemical formula")
          formula_chemical = input("Enter Chemical Formula: ")
          print("And a amount of compound in grams")
-         compounds_amount = float(input("Enter the amount of compunds in grams: "))
+         compounds_amount = float(input("Enter the amount of compounds in grams: "))
          formula = parse_formula(formula_chemical, table)
          print("")
          print(f"The machine will look to the chemical formula like")
          print(f"This: {formula}")
-         learn_molar_mass(formula, compounds_amount)
+         learn_molar_mass(formula, compounds_amount, table)
     else:
         formula_chemical = input("Enter Chemical Formula: ")
-        compounds_amount = float(input("Enter the amount of compunds in grams: "))
+        compounds_amount = float(input("Enter the amount of compounds in grams: "))
         formula = parse_formula(formula_chemical, table)
-        compute_molar_mass(formula, compounds_amount)
+        molar_mass = compute_molar_mass(formula, make_periodic_table)
+        moles = compounds_amount / molar_mass
+        print(f"{molar_mass} molar mass")
+        print(f"{moles:.5f} moles")
     
 
 if __name__ == "__main__":

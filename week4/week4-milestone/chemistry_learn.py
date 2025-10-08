@@ -1,6 +1,5 @@
-from chemistry import make_periodic_table
 
-def learn_molar_mass(formula, amount):
+def learn_molar_mass(formula, amount, table):
     """
     Calculates the molar mass and number of moles of a compound.
     Takes a formula (list of element–quantity pairs) and the sample mass.
@@ -22,22 +21,22 @@ def learn_molar_mass(formula, amount):
                      symbol = value
                      y.append(symbol)
 
-    print("Do you want to know the diference ")
+    print("Do you want to know the difference ")
     question1 = input("between the letter and the numbers? (Y/n) ")
     if question1.upper() in ("Y","YES"):
          print("The capitals in the list are references to symbols")
-         print("on periodic table. The numbers are the quantity")
+         print("in the periodic table. The numbers are the quantity")
          print("of the element present in that molecule.")
         
          confirmation = input("Did you understand? (Y/n) ")
-         while confirmation.upper() != ("Y","YES"):
+         while confirmation.upper() not in ("Y","YES"):
             print("The capitals in the list are references to symbols")
-            print("on periodic table. The numbers are the quantity")
+            print("in the periodic table. The numbers are the quantity")
             print("of the element present in that molecule.")
-            confirmation = input("Did you had understood? (Y/n)  ")
+            confirmation = input("Did you have understood? (Y/n)  ")
     
     print("")
-    print("On the sequence, Separe the symbols of the number of atoms")
+    print("On the sequence, separate the symbols of the number of atoms")
     print("")
     print("Write - symbol - to list the symbols")
     question2 = input("--- ")
@@ -45,7 +44,7 @@ def learn_molar_mass(formula, amount):
          print(y)
     else:
          print("Now will not see the list")
-         print(" and your powers of summoning an chemical symbols list is gone")
+         print(" and your powers of summoning an chemical symbol list is gone")
     
     print("")
     print("Write - number - to list the number of atoms")
@@ -57,6 +56,11 @@ def learn_molar_mass(formula, amount):
          print(" and your powers of summoning, an number of atoms list, is gone")
     print("")
 
+    addquestion0= input("Every time you write something you are using your powers, ok? ")
+    print("You will need to use your power sometimes to make this activitie go in a ritmo")
+    addquestion1 = input("write - go - : ")
+    print("congratulations")
+    print("")
     list_atomic_mass = []
     def find_mass(symbol):
          """Function to find the atomic mass
@@ -64,13 +68,14 @@ def learn_molar_mass(formula, amount):
            parameter: symbol = string
            return float"""
          
-         atomic_mass = make_periodic_table()[symbol][1]
+         atomic_mass = table[symbol][1]
          return atomic_mass
     
     print("It is important to have 2 lists to be capable of use the values on differents ways")
     print("")
-    print("We gonna use the list of symbols like a key to find they atomic mass on the dictionary.")
-    print("I had create a function to do that so now,")
+    addquestion3= input("How many lists do you have? ")
+    print("We gonna use the list of symbols like a key to find their atomic mass on the dictionary.")
+    print("I have created a function to do that so now,")
     
     for symbol in y:
          #here we find the atomic value referent to the symbols that we got in formula
@@ -78,12 +83,12 @@ def learn_molar_mass(formula, amount):
          atomic_mass = find_mass(symbol)
          list_atomic_mass.append(atomic_mass)
     
-    print("you just have to enter 'you are incrible' for your powers summon the list")
+    print("you just have to enter 'you are incredible' for your powers summon the list")
     question4 = input("--- ")
     print(list_atomic_mass)
-    print("WOW, you ARE incrible!!!")
+    print("WOW, you ARE incredible!!!")
     print("")
-    question5 = input("Did you really write that I am incrible?")
+    question5 = input("Did you really write that I am incredible? ")
     if question5.upper().startswith("Y"):
          print("Awnn, thank you!")
     else:
@@ -93,6 +98,8 @@ def learn_molar_mass(formula, amount):
     print("well, keep going")
     print("")
 
+    print("Write -I want to study- to summon the next part:")
+    addquestion2 = input("--- ")
     print("Find the atomic mass is important because we need that to discover the molar mass")
     print("The atomic mass need to be in the same index that they reference symbol")
     print("That index is gonna be the same as the number, in the number of atoms list")
@@ -107,19 +114,19 @@ def learn_molar_mass(formula, amount):
          #here we gonna multiply the number of atoms by it self reference atomic mass
          multiply = atom_num * atom_mass
          mult_list.append(multiply)
-    print("Now use your powers one last time, write - atomic mass -")
+    print("Now use your powers, write - atomic mass -")
     question7 = input("--- ")
     print(mult_list)
 
     if question7.upper() == "ATOMIC MASS":
-         print("I really dont believe that you are using your powers")
+         print("I really don´t believe that you are using your powers")
          print("That is REALLY awesome")
          print("in someway I think that... I love you")
-         print("Did you think that we have chemistry?")
+         print("Do you think that we have chemistry?")
          print("HAHAHHAAHA")
     else:
          print("")
-         print("you lost a good joke")
+         print("you missed a good joke")
          print("")
     
     molar_mass = sum(mult_list)
@@ -139,7 +146,7 @@ def learn_molar_mass(formula, amount):
     print("To find the mole just divide the amount by the molar mass")
     print(f"amount {amount} / {molar_mass} molar mass")
     question10= input("Did you know the answer? ")
-    print("I dont know (either), but the machine knows")
+    print("I don´t know (either), but the machine knows")
     print("Ask the machine the answer")
     print("The biggest power we have, is the power to be gentle")
     question11= input("say something gentle... ")
@@ -147,3 +154,5 @@ def learn_molar_mass(formula, amount):
     print(moles)
     print("")
     print("byee")
+
+    return molar_mass, moles
