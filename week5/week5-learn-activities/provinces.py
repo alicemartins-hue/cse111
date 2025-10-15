@@ -27,7 +27,7 @@ def main():
             x+=1
 
     print(text_list)
-    print(f"Alberta shows {x} times on the list.")
+    print(f"Alberta appears {x} times in the list.")
 
 if __name__ == "__main__":
     main()
