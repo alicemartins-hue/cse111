@@ -13,6 +13,7 @@ def read_dictionary(filename, key_column_index):
 
 
 def main():
+    print("WELCOME TO STARFRUIT GROCERY")
     try:
         KEY_INDEX = 0
         NAME_INDEX = 1
