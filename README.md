@@ -90,9 +90,4 @@ Course materials and assignments provided by **BYU–Idaho / BYU Pathway Worldwi
 
 ---
 
-## ⚠️ Licensing
-
-This project is licensed under the **MIT License**.  
-See the [LICENSE](LICENSE) file for details.
-
 ⬆️ [Back to top](#-cse111--programming-with-functions)
